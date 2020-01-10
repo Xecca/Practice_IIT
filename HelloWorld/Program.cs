@@ -148,6 +148,13 @@ namespace HelloWorld
             return sumPositiveNumbers;
         }
 
+        /// <summary>
+        /// Expr11. Функция определяет угол от часовой к минутной стрелке на
+        /// обычных часах.
+        /// </summary>
+        /// <param name="hours">часы</param>
+        /// <param name="minutes">минуты</param>
+        /// <returns>угол между часовой и минутной стрелками в градусах</returns>
         static public int AngleBetweenHoursAndMinutes(int hours, int minutes)
         {
             int angle = 0;
@@ -156,6 +163,18 @@ namespace HelloWorld
                 hours -= 12;
             angle = Math.Abs((hours * 30) - (minutes * 6));
             return angle;
+        }
+
+        static public void MinAndMaxTimeStuffyEars(int height, int time, int speed, int stuffySpeed)
+        {
+            int minTime = 0;
+            int maxTime = 0;
+            minTime = time / ((speed - stuffySpeed) / stuffySpeed);
+            if ((height / time) > stuffySpeed)
+                maxTime = time;
+            else
+                maxTime = time - minTime;
+            Console.WriteLine("{0}.0 {1}.0", (double)minTime, maxTime);
         }
 
         public static void Main(string[] args)
@@ -174,7 +193,8 @@ namespace HelloWorld
             //Console.WriteLine(BissextileYear(1840, 1852));
             //Console.WriteLine(Distance(m, p1, p2));
             //Console.WriteLine(SumAllPositiveNumbers());
-            Console.WriteLine(AngleBetweenHoursAndMinutes(15, 12));
+            //Console.WriteLine(AngleBetweenHoursAndMinutes(15, 12));
+            MinAndMaxTimeStuffyEars(12000, 600, 60, 10);
         }
     }
 }
