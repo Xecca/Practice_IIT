@@ -105,7 +105,17 @@ namespace HelloWorld
             return bissextile_count;
         }
 
-
+        /// <summary>
+        /// Expr 6. Функция рассчитывает расстояние от точки до прямой,
+        /// заданной двумя разными точками.
+        /// </summary>
+        /// <param name="m">координаты точки (массив integer)
+        /// (int[] m = { 2, 3 };)</param>
+        /// <param name="p1">координаты первой точки, через которую проведена
+        /// прямая (int[] p1 = { 10, 12 };)</param>
+        /// <param name="p2">координаты второй точки, через которую проведена
+        /// пряма (int[] p2 = { 34, 25 };)</param>
+        /// <returns>возвращает расстояние от точки до прямой (double)</returns>
         static double Distance(int[] m, int[] p1, int[] p2)
         {
             double dist = 0;
@@ -117,13 +127,28 @@ namespace HelloWorld
             return dist;
         }
 
+
+        static int SumAllPositiveNumbers()
+        {
+            int sumPositiveNumbers = 0;
+            int i = 0;
+            while (i < 1000)
+            {
+                if (i % 3 == 0 || i % 5 == 0)
+                    sumPositiveNumbers++;
+                i++;
+            }
+            
+            return sumPositiveNumbers;
+        }
+
         public static void Main(string[] args)
         {
             //int hours = 16;
             //int num1 = 478;
-            int[] m = { 2, 3 };
-            int[] p1 = { 10, 12 };
-            int[] p2 = { 34, 25 };
+            //int[] m = { 2, 3 };
+            //int[] p1 = { 10, 12 };
+            //int[] p2 = { 34, 25 };
             Console.WriteLine("Hello World!");
             //SwapInt1(ref int1, ref int2);
             //SwapInt2(ref int1, ref int2);
@@ -131,7 +156,8 @@ namespace HelloWorld
             //Console.WriteLine(AngleDegree(hours));
             //Console.WriteLine(DivideCount(12, 2, 3));
             //Console.WriteLine(BissextileYear(1840, 1852));
-            Console.WriteLine(Distance(m, p1, p2));
+            //Console.WriteLine(Distance(m, p1, p2));
+            Console.WriteLine(SumAllPositiveNumbers());
         }
     }
 }
