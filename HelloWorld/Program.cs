@@ -116,6 +116,7 @@ namespace HelloWorld
         /// <param name="p2">координаты второй точки, через которую проведена
         /// пряма (int[] p2 = { 34, 25 };)</param>
         /// <returns>возвращает расстояние от точки до прямой (double)</returns>
+        /// 
         static double Distance(int[] m, int[] p1, int[] p2)
         {
             double dist = 0;
@@ -127,7 +128,12 @@ namespace HelloWorld
             return dist;
         }
 
-
+        /// <summary>
+        /// Expr10. Функция находит сумму всех положительных чисел меньше 1000
+        /// кратных 3 или 5.
+        /// </summary>
+        /// <returns>количество положительлных чисел кратных 3 или 5</returns>
+        /// 
         static int SumAllPositiveNumbers()
         {
             int sumPositiveNumbers = 0;
@@ -140,6 +146,16 @@ namespace HelloWorld
             }
             
             return sumPositiveNumbers;
+        }
+
+        static public int AngleBetweenHoursAndMinutes(int hours, int minutes)
+        {
+            int angle = 0;
+
+            if (hours > 12)
+                hours -= 12;
+            angle = Math.Abs((hours * 30) - (minutes * 6));
+            return angle;
         }
 
         public static void Main(string[] args)
@@ -157,7 +173,8 @@ namespace HelloWorld
             //Console.WriteLine(DivideCount(12, 2, 3));
             //Console.WriteLine(BissextileYear(1840, 1852));
             //Console.WriteLine(Distance(m, p1, p2));
-            Console.WriteLine(SumAllPositiveNumbers());
+            //Console.WriteLine(SumAllPositiveNumbers());
+            Console.WriteLine(AngleBetweenHoursAndMinutes(15, 12));
         }
     }
 }
